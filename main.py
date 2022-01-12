@@ -1,3 +1,8 @@
+"""
+    Developed by: Bahador Mirzazadeh - Amirhosein Sarbaz - Reza Nobahari - Hadi Montakhabi
+    Starting Date: 08/Jan/2022
+"""
+
 from modules.evolutionary_algorithm import run_algorithm
 import os
 
@@ -13,13 +18,16 @@ if __name__ == '__main__':
     while True:
         print()
         print('-------------------Graph Partitioning Using An Evolutionary Algorithm with ODPX-----------------------')
-        print('Please enter the number of partitions or enter q to exit: ')
+        print('Please enter the number of partitions or anything else to exit: ')
         k = input()
         if not k.isnumeric():
             exit(0)
         k = int(k)
         print('Please enter the number of generations:')
-        MAX_GEN = int(input())
+        MAX_GEN = input()
+        if not MAX_GEN.isnumeric():
+            exit(0)
+        MAX_GEN = int(MAX_GEN)
         graph_file_path = str(os.getcwd()) + '\\Graph.txt'
         weight_file_path = str(os.getcwd()) + '\\VertexWeights.txt'
         print('Reading graph from [' + graph_file_path + ']...')
