@@ -30,7 +30,7 @@ if __name__ == '__main__':
                 data = line.split()
                 graph.append([int(i) for i in data])
         print('Reading vertex weight from [' + weight_file_path + ']...')
-        weight_vector = [int(i) for i in open(weight_file_path, 'r')]
+        weight_vector = [float(i) for i in open(weight_file_path, 'r')]
         print('Running algorithm...')
         partitions = normalize_partitions(run_algorithm(graph, weight_vector, k, MAX_GEN))
         print('K=' + str(k) + ' And ' + 'Generations=' + str(MAX_GEN) + ' :Partitions -> ' + str(partitions))
